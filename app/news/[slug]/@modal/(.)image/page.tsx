@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { notFound } from 'next/navigation'
-import { DUMMY_NEWS } from '../../../../dummy-news'
+import { DUMMY_NEWS } from '../../../../../dummy-news'
 type Props = {
   params: any
 }
