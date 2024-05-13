@@ -1,7 +1,8 @@
 import React, { FC } from 'react'
-import Link from 'next/link'
-import { DUMMY_NEWS } from '../../../dummy-news'
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
+
+import { DUMMY_NEWS } from '../../../dummy-news'
 
 type Props = {
   params: any
@@ -16,7 +17,9 @@ const NewsDetailPage: FC<Props> = ({ params }) => {
   return (
     <article className="news-article">
       <header>
-        <img src={`/images/news/${newsItem.image}`} alt={newsItem.title} />
+        <Link href={`/news/${newsItem.slug}/image`}>
+          <img src={`/images/news/${newsItem.image}`} alt={newsItem.title} />
+        </Link>
         <h1>{newsItem.title}</h1>
         <time datetime={newsItem.date}>{newsItem.date.toDateString()}</time>
       </header>
