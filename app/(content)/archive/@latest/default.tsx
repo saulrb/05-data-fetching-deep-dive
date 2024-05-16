@@ -1,5 +1,5 @@
-import { getLatestNews } from '../../../lib/news'
-import NewsList from '../../../components/news-list'
+import { getLatestNews } from '~/news'
+import NewsList from '~/news-list'
 
 const LatestNewsPage = () => {
   const latestNews = getLatestNews()

@@ -1,12 +1,12 @@
 import Link from 'next/link'
-import NewsList from '../../../../components/news-list'
+import NewsList from '~/news-list'
 import {
   getAvailableNewsMonths,
   getAvailableNewsYears,
   getNewsForYear,
   getNewsForYearAndMonth
-} from '../../../../lib/news'
-import { News } from '../../../../dummy-news'
+} from '~/news'
+import { News } from '~/dummy-news'
 
 const FilteredNewsPage = ({ params }) => {
   const filter = params.filter

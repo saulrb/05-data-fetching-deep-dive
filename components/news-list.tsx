@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import Link from 'next/link'
-import { News } from '../dummy-news'
+import { News } from '../lib/dummy-news'
 
 type Props = {
   newsList: News[]

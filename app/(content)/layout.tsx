@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import './globals.css'
-import MainHeader from '../components/main-header'
+import '../globals.css'
+import MainHeader from '~/main-header'
 
 export const metadata: Metadata = {
   title: 'Next.js Page Routing & Rendering',
