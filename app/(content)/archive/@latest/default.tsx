@@ -1,8 +1,8 @@
 import { getLatestNews } from '~/news'
 import NewsList from '~/news-list'
 
-const LatestNewsPage = () => {
-  const latestNews = getLatestNews()
+const LatestNewsPage = async () => {
+  const latestNews = await getLatestNews()
   return (
     <>
       <h2>Latest News</h2>

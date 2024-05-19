@@ -1,16 +1,15 @@
 import React, { FC } from 'react'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-
-import { DUMMY_NEWS } from '~/dummy-news'
+import { getNewsItem } from '~/news'
 
 type Props = {
   params: any
 }
 
-const NewsDetailPage: FC<Props> = ({ params }) => {
+const NewsDetailPage: FC<Props> = async ({ params }) => {
   const newsSlug = params.slug
-  const newsItem = DUMMY_NEWS.find(newsItem => newsItem.slug === newsSlug)
+  const newsItem = await getNewsItem(newsSlug)
   if (!newsItem) {
     notFound()
   }
@@ -21,7 +20,7 @@ const NewsDetailPage: FC<Props> = ({ params }) => {
           <img src={`/images/news/${newsItem.image}`} alt={newsItem.title} />
         </Link>
         <h1>{newsItem.title}</h1>
-        <time datetime={newsItem.date}>{newsItem.date.toDateString()}</time>
+        <time datetime={newsItem.date}>{newsItem.date}</time>
       </header>
       <p>{newsItem.content}</p>
     </article>

@@ -1,13 +1,15 @@
 import React, { FC } from 'react'
 import NewsList from '~/news-list'
-import { DUMMY_NEWS } from '~/dummy-news'
+import { getAllNews } from '~/news'
 
-const NewsPage: FC = () => {
+const NewsPage: FC = async () => {
+  const news = await getAllNews()
+
   return (
     <>
       <h1>News Page</h1>
       <ul className="news-list">
-        <NewsList newsList={DUMMY_NEWS}></NewsList>
+        <NewsList newsList={news}></NewsList>
       </ul>
     </>
   )
